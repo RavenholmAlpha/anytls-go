@@ -22,7 +22,7 @@ func NewMyClient(ctx context.Context, dialOut util.DialOutFunc) *myClient {
 	s := &myClient{
 		dialOut: dialOut,
 	}
-	s.sessionClient = session.NewClient(ctx, s.createOutboundConnection, &padding.DefaultPaddingFactory, time.Second*30, time.Second*30, 5)
+	s.sessionClient = session.NewClient(ctx, s.createOutboundConnection, &padding.DefaultPaddingFactory, time.Second*30, time.Second*30, 0)
 	return s
 }
 
